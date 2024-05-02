@@ -12,7 +12,6 @@ name: Publish Docker image
 
 on:
   push:
-   branches: [ "main" ]
    paths:
    - '.github/workflows/publish_docker.yml'
    - 'Dockerfile'
