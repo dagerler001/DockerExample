@@ -67,13 +67,9 @@ RUN SDK_TOOLS_URL="https://dl.google.com/android/repository/commandlinetools-lin
 
 RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "tools" && \
 	echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platform-tools" && \
-    echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "build-tools;34.0.0" && \
-    echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "build-tools;33.0.3" &&
+    echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "build-tools;34.0.0"
 
-
-RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-31" && \
-    echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-32" && \
-    echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-33" && \
+RUN echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-33" && \
     echo y | ${CMDLINE_TOOLS_ROOT}/sdkmanager "platforms;android-34"
 
 # Install some useful packages
