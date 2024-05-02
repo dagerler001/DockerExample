@@ -27,11 +27,13 @@ jobs:
         run: ./gradlew build
 
 
+      - name: BuildInfo
+        run: |
+          echo "BuildInfo..."  
+          echo "BUILD_DATE=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
-        run: |
-          echo "Uploading build artifact..."  
-          echo "BUILD_DATE=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
         with:
           name: artifact-${{ env.BUILD_DATE }}
           path: app/build/outputs/**/
