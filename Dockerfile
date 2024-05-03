@@ -8,8 +8,6 @@
 
 FROM cimg/base:2024.02
 
-LABEL maintainer="CircleCI Execution Team <eng-execution@circleci.com>"
-
 # Java 17 is default
 RUN sudo apt-get update && sudo apt-get install -y \
 		ant \
@@ -17,11 +15,14 @@ RUN sudo apt-get update && sudo apt-get install -y \
 		openjdk-17-jdk \
 		openjdk-21-jdk \
 		ruby-full \
+        openvpn \
+        openvpn-systemd-resolved \
 	&& \
 	sudo rm -rf /var/lib/apt/lists/* && \
 	ruby -v && \
 	sudo gem install bundler && \
 	bundle version
+
 
 #fixes issue with bundle install highlighted in https://github.com/CircleCI-Public/cimg-android/issues/82
 RUN sudo chmod -R a+w /var/lib/gems/ /usr/local/bin
