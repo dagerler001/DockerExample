@@ -20,7 +20,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: docker-android
-  TAG: ${{ github.repository }}/docker-android:gradle-8.6
+  TAG: docker-android:gradle-8.6
 
 # There is a single job in this workflow. It's configured to run on the latest available version of Ubuntu.
 jobs:
