@@ -12,7 +12,7 @@ name: Publish Docker image
 on:
   push:
     paths:
-      - '.github/workflows/build-image-github.yml'
+      - '.github/workflows/publish-docker.yml'
       - 'docker/Dockerfile'
 
 
